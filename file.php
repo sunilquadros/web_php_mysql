@@ -58,8 +58,8 @@ $postalCode=$_POST['postalCode'];
 $country=$_POST['country'];
 
 // ***********  Example of mysql insert conn ********* //
-//mysqli_query($conn"INSERT INTO instructors(first_name,last_name,department,email)
-//				VALUES('$first_name','$last_name','$department','$email')");
+mysqli_query($conn"INSERT INTO instructors(first_name,last_name,department,email)
+				VALUES('$first_name','$last_name','$department','$email')");
 // ***********  Example of mysql insert conn ********* //
 
 mysqli_query($conn"INSERT INTO instructors(instructorNumber,instructorName,email,city,state,postalCode,country)
