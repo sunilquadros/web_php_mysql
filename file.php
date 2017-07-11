@@ -18,32 +18,52 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully";
 
-echo " \n";
+// *********** Temporarily commenting out this portion of code *********
 
-$sql = "SELECT instructorNumber, instructorName, email, city, state, postalCode, country
-    from instructors";
+//echo " \n";
 
-$result = $conn->query($sql);
+//$sql = "SELECT instructorNumber, instructorName, email, city, state, postalCode, country
+//    from instructors";
 
-if ($result->num_rows > 0) {
-   echo"<table border='1'>";
-   echo"<tr><td>Name</td><td>Category</td><td>Calories</td><tr>";
+//$result = $conn->query($sql);
+
+//if ($result->num_rows > 0) {
+//   echo"<table border='1'>";
+//   echo"<tr><td>Name</td><td>Category</td><td>Calories</td><tr>";
    // output data of each row
-   while($row = $result->fetch_assoc()) {
-          echo "InNum:- " . $row["instructorNumber"]. " " ;
-          echo "InName:- " . $row["instructorName"]. " " ;
-          echo "Email:- " . $row["email"]. " " ;
-          echo "City:- " . $row["city"]. " " ;
-          echo "State:- " .  $row["state"]. " " ;
-          echo "PostalCode:- " . $row["postalCode"]. " " ;
-          echo "Country:- " . $row["country"]. " " ;
-        echo " \n";
-   echo"</table>";
-   }
-} else {
-   echo "0 results";
-}
+//   while($row = $result->fetch_assoc()) {
+//          echo "InNum:- " . $row["instructorNumber"]. " " ;
+//          echo "InName:- " . $row["instructorName"]. " " ;
+//          echo "Email:- " . $row["email"]. " " ;
+//          echo "City:- " . $row["city"]. " " ;
+//          echo "State:- " .  $row["state"]. " " ;
+//          echo "PostalCode:- " . $row["postalCode"]. " " ;
+//          echo "Country:- " . $row["country"]. " " ;
+//        echo " \n";
+//   echo"</table>";
+//   }
+// } else {
+//   echo "0 results";
+// }
 
+// *********** Temporarily commenting out this portion of code *********
+
+// create a variable
+$instructorNumber=$_POST['instructorNumber'];
+$instructorName=$_POST['instructorName'];
+$email=$_POST['email'];
+$city=$_POST['city'];
+$state=$_POST['state'];
+$postalCode=$_POST['postalCode'];
+$country=$_POST['country'];
+
+// ***********  Example of mysql insert conn ********* //
+//mysqli_query($conn"INSERT INTO instructors(first_name,last_name,department,email)
+//				VALUES('$first_name','$last_name','$department','$email')");
+// ***********  Example of mysql insert conn ********* //
+
+mysqli_query($conn"INSERT INTO instructors(instructorNumber,instructorName,email,city,state,postalCode,country)
+                                VALUES('$instructorNumber','$instructorName','$email','$city','$state','$postalCode','$country')");
 
 $conn->close();
 ?>
