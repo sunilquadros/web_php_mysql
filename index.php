@@ -1,8 +1,8 @@
 <html>
 <head>
-<?php
+<!-- <?php
 require('./file.php');
-?>
+?> -->
 <style>
 label{display:inline-block;width:100px;margin-bottom:10px;}
 </style>
