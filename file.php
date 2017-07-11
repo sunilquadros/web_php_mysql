@@ -64,7 +64,17 @@ $country=$_POST['country'];
 
 echo $instructorNumber; 
 
-mysqli_query($conn"INSERT INTO instructors(instructorNumber,instructorName,email,city,state,postalCode,country) VALUES('$instructorNumber','$instructorName','$email','$city','$state','$postalCode','$country')");
+$sql = "INSERT INTO instructors (instructorNumber, instructorName, email, city, state, postalCode, country) VALUES ('$instructorNumber', '$instructorName', '$email', '$city', '$state', '$postalCode', '$country')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+
+
+// mysqli_query($conn"INSERT INTO instructors (instructorNumber, instructorName, email, city, state, postalCode, country) VALUES ('$instructorNumber', '$instructorName', '$email', '$city', '$state', '$postalCode', '$country')");
 
 $conn->close();
 ?>
