@@ -62,6 +62,8 @@ $country=$_POST['country'];
 // 				VALUES('$first_name','$last_name','$department','$email')");
 // ***********  Example of mysql insert conn ********* //
 
+echo $instructorNumber; 
+
 mysqli_query($conn"INSERT INTO instructors(instructorNumber,instructorName,email,city,state,postalCode,country) VALUES('$instructorNumber','$instructorName','$email','$city','$state','$postalCode','$country')");
 
 $conn->close();
