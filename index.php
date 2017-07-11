@@ -5,25 +5,34 @@ label{display:inline-block;width:100px;margin-bottom:10px;}
 </style>
  
  
-<title>Add Employee</title>
+<title>Add Record</title>
 </head>
 <body>
  
 <form method="post" action="">
-<label>First Name</label>
+<label>Instructor Number</label>
 <input type="text" name="first_name" />
 <br />
-<label>Last Name</label>
+<label>Instructor Name</label>
 <input type="text" name="last_name" />
 <br />
-<label>Department</label>
+<label>Email</label>
 <input type="text" name="department" />
 <br />
-<label>Email</label>
+<label>City</label>
+<input type="text" name="department" />
+<br />
+<label>State</label>
+<input type="text" name="department" />
+<br />
+<label>Postal Code</label>
+<input type="text" name="department" />
+<br />
+<label>Country</label>
 <input type="text" name="email" />
  
 <br />
-<input type="submit" value="Add Employee">
+<input type="submit" value="Add Record">
 </form>
  
  
